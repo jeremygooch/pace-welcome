@@ -1,0 +1,189 @@
+@import url('http://fonts.googleapis.com/css?family=Noto+Sans');
+
+html, body {
+    font-family: 'Noto Sans',serif;
+    height: 100%;
+    background: #a7c7c2;
+    background: -moz-linear-gradient(-45deg, #a7c7c2 0%, #9aae93 29%, #7d8262 100%);
+    background: -webkit-linear-gradient(-45deg, #a7c7c2 0%,#9aae93 29%,#7d8262 100%);
+    background: linear-gradient(135deg, #a7c7c2 0%,#9aae93 29%,#7d8262 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7c7c2', endColorstr='#7d8262',GradientType=1 );
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.pace {
+    -webkit-pointer-events: none;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    height: 100%;
+    width: 100%;
+}
+
+.pace-done .pace-progress {
+    animation: hideBorder 250ms ease-in-out forwards;
+}
+
+.pace-progress {
+    position: fixed;
+    z-index: 2000;
+    top: 50%;
+    left: 7.5%;
+    max-width: 85%;
+    border-top: 2px solid rgba(255,255,255,1);
+    margin-top: -2px;
+}
+
+.pace-activity {
+    width: 100%;
+    height: 50%;
+    position: fixed;
+}
+
+.pace-done .pace-activity:after,.pace-progress-inner:after, .pace:after {
+    content: "Welcome";
+    padding: 0;
+    display: block;
+    font-weight: bold;
+    color: #fff;
+    font-family: 'Noto Sans', serif;
+    font-size: 4.75rem;
+    text-align: center;
+}
+
+.pace-done.pace:after {
+    animation: fadeIn .05s ease-in-out forwards,
+    flyAway 700ms ease-in-out forwards;
+    animation-delay: 1.05s, 1.15s;
+}
+
+.pace:after {
+    top: 50%;
+    position: absolute;
+    margin-top: -4.3rem;
+    width: 100%;
+    color: rgba(255,255,255,0.0);
+}
+
+.pace-activity:after,.pace-progress-inner:after {
+    border: 1px solid red;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+}
+
+.pace-progress-inner {
+    height: 100px;
+    width: 100%;
+    background: transparent;
+    position: relative;
+    overflow: hidden;
+}
+.pace .pace-activity:after, .pace .pace-progress-inner:after { display: none; }
+
+.pace-done .pace-activity:after {
+    border: 1px solid yellow;
+    display: block;
+    animation: slideUp 1.05s ease-in-out forwards,
+    fadeOut .25s ease-out forwards;
+    animation-delay: 0s, 1.05s;
+}
+
+.pace-activity:after {
+    margin-bottom: -1.95rem;
+    bottom: 2.65rem;
+}
+
+.pace-done .pace-progress-inner:after {
+    display: block;
+    animation: slideDown 1.05s ease-in-out forwards,
+    fadeOut .25s ease-out forwards;
+    animation-delay: 0s, 1.05s;
+}
+
+.pace-progress-inner:after {
+    /* border: 1px solid blue; */
+    /* margin-top: -6.2rem; */
+}
+
+
+
+/* ***************************************** */
+/* Animation                                 */
+/* ***************************************** */
+
+@keyframes fadeIn {
+    from { color: rgba(255,255,255,0.0); }
+    to   { color: rgba(255,255,255,1.0); }
+}
+@keyframes fadeOut {
+    from { color: rgba(255,255,255,1.0); }
+    to   { color: rgba(255,255,255,0.0); }
+}
+@keyframes flyAway {
+    from {
+	letter-spacing: 0.05rem;
+	opacity: 1;
+	font-size: 4.75rem;
+	margin-top: -3.5rem;
+    }
+    to {
+	letter-spacing: 2rem;
+	opacity: 0;
+	font-size: 5.5rem;
+	margin-top: -3.95rem;
+    }
+}
+
+@keyframes hideBorder {
+    0% { border-top: 2px solid rgba(255,255,255,1); }
+    100% { border-top: 2px solid rgba(255,255,255,.01); }
+}
+
+@keyframes slideDown {
+    from { margin-top: -5.1rem; }
+    to   { margin-top: -3.5rem; }
+}
+
+
+@keyframes slideUp {
+    from { height: 0rem; }
+    to   { height: 3.75rem; }
+}
+
+/* Firefox < 16 */
+/* @-moz-keyframes fadein { */
+/*     from { opacity: 0; } */
+/*     to   { opacity: 1; } */
+/* } */
+
+/* /\* Safari, Chrome and Opera > 12.1 *\/ */
+/* @-webkit-keyframes fadein { */
+/*     from { opacity: 0; } */
+/*     to   { opacity: 1; } */
+/* } */
+
+/* /\* Internet Explorer *\/ */
+/* @-ms-keyframes fadein { */
+/*     from { opacity: 0; } */
+/*     to   { opacity: 1; } */
+/* } */
+
+/* /\* Opera < 12.1 *\/ */
+/* @-o-keyframes fadein { */
+/*     from { opacity: 0; } */
+/*     to   { opacity: 1; } */
+/* } */

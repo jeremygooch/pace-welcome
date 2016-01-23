@@ -1,0 +1,23 @@
+document.addEventListener("DOMContentLoaded", init, false);
+
+function init() {
+    var pace = document.querySelector('.pace');
+    var paceProgress = document.querySelector('.pace-progress');
+    window.setTimeout(function() {
+	paceProgress.style.width = "35%";
+	window.setTimeout(function() {
+	    paceProgress.style.width = "55%";
+	    window.setTimeout(function() {
+		paceProgress.style.width = "75%";
+		window.setTimeout(function() {
+		    paceProgress.style.width = "85%";
+		    window.setTimeout(function() {
+			paceProgress.style.width = "100%";
+			pace.classList.add('pace-done');
+			pace.classList.remove('pace-running');
+		    }, 800);
+		}, 300);
+	    }, 800);
+	}, 500);
+    }, 700);
+}
