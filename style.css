@@ -1,11 +1,11 @@
+@import url('http://fonts.googleapis.com/css?family=Noto+Sans');
+
 .pace-done .pace-activity:after,.pace-progress-inner:after, .pace:after, .pace-progress:after {
     /* ******************************************************* */
     /* Change the following line to update the welcome message */
     /* ******************************************************* */
     content: "Welcome";
 }
-
-@import url('http://fonts.googleapis.com/css?family=Noto+Sans');
 
 html, body {
     font-family: 'Noto Sans',serif;
